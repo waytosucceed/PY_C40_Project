@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width: device-width, initial-scale=1.0">
+    <title>PROJECT</title>
+    <link rel="icon" type="image/x-icon" href="Logo_last.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffde57;
+            text-align: center;
+            color: #333;
+            word-wrap: break-word;
+        }
+
+        .header {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 5px 30px;
+            background-color: white;
+            text-align: left;
+        }
+
+        .logo {
+            width: 5%;
+        }
+
+        img {
+            vertical-align: middle;
+        }
+
+        .header-image {
+            width: 30%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .container {
+            margin: 1rem 2rem;
+            padding: 1rem;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #007bff;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin: 20px 2rem;
+        }
+
+        .highlight {
+            background: #eee;
+            padding: 10px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        .image-container {
+            margin: 20px 0;
+        }
+
+        .image-container img {
+            width: 100%;
+            max-width: 250px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .footer {
+            background: #007bff;
+            color: #fff;
+            padding: 10px;
+            margin-top: 20px;
+            border-radius: 8px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease;
+            font-weight: bold;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
+
+        ol {
+            li {
+                margin-bottom: 0.7rem;
+            }
+        }
+
+        .instruction-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .instruction-img {
+            width: 100%;
+            height: auto;
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+            justify-content: center;
+            align-items: center;
+            overflow: auto;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 800px;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* Style for hidden image */
+        .hidden-image {
+            display: none;
+            margin-top: 20px;
+            max-width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <img src="./logo/Logo.png" alt="Logo" class="logo" />
+        <img src="./logo/header.png" alt="Header" class="header-image" />
+    </header>
+    <!-- <p style="text-align: center; font-size: 1.7rem; font-weight: bold; margin-bottom: 0;margin-top: 0;">
+        <br>👉🏽<a href="https://github.com/WayToSucceed-Coding/Class-27-Project-Template.git" target="_blank" class="">Click To Get Images</a>
+    </p> -->
+    <div class="container">
+
+        <h1>Full Body Detection Using Haar Cascade
+        </h1>
+        <p style="font-size: 1.5rem;text-align: left;">
+            In this project, your task is to detect full human bodies inside a given image using a Haar Cascade
+            classifier. You’ll scan the image, find every full body, draw a red rectangle around it, and display the
+            result. <br>
+
+            This is exactly how basic pedestrian detection systems work, in smart surveillance, crowd analytics, and
+            even retail footfall tracking.
+
+
+        </p>
+
+        <ul style="font-size: 1.5rem;text-align: left;">
+            <li> Use a new Haar Cascade file trained to detect full human figures</li>
+            <li> Load and convert the image to grayscale</li>
+            <li> Run the detector</li>
+            <li> Draw red rectangles around each detected body</li>
+            <li> Display the final output</li>
+
+
+        </ul>
+
+        <p style="font-size: 1.5rem;text-align: left;">
+            Here are the steps you need to follow:
+
+            <br> <br>
+
+            <b>Step 1: Setup the Project
+            </b>
+        <ul style="font-size: 1.5rem;text-align: left;">
+            <li> Download the project template</li>
+            <li> Open the folder in Visual Studio Code.</li>
+            <li> Inside it, create a new Python file named project.py</li>
+
+        </ul>
+
+        </p>
+
+
+
+        <p style="font-size: 1.5rem;text-align: left;">
+            <b>Step 2: Download the Haar Cascade for Full Body Detection
+            </b> <br>
+
+        </p>
+
+        <ul style="font-size: 1.5rem;text-align: left;">
+            <li> Visit the official Haar Cascade repository:
+                <br> <a
+                    href="https://github.com/opencv/opencv/tree/master/data/haarcascades">https://github.com/opencv/opencv/tree/master/data/haarcascades</a>
+            </li>
+
+            <li> Scroll and find the file: <br>
+                haarcascade_fullbody.xml</li>
+
+            <li> Click on the file name > Click the "Raw" button (top right of the code box) > Right-click anywhere and
+                select “Save As...” > Save it in your project folder.</li>
+        </ul>
+
+
+
+        <p style="font-size: 1.5rem;text-align: left;">
+            <b> Step 3: Import the Required Library</b> <br>
+            Import the cv2 library in your Python file to access OpenCV's tools.
+        </p>
+
+
+
+        <p style="font-size: 1.5rem;text-align: left;">
+            <b>Step 4: Load the Image
+            </b> <br>
+            Load the img.jpg image using cv2.imread() and save it in a variable called image.
+
+
+        </p>
+
+
+
+        <p style="font-size: 1.5rem;text-align: left;">
+            <b>Step 5: Load the Haar Cascade Classifier</b>
+        </p>
+
+        <ul style="font-size: 1.5rem;text-align: left;">
+            <li> Use cv2.CascadeClassifier('haarcascade_fullbody.xml') to load the model.</li>
+            <li> Store it in a variable named classifier.</li>
+        </ul>
+
+
+        <p style="font-size: 1.5rem;text-align: left;">
+            <b>Step 6: Convert Image to Grayscale</b>
+        </p>
+
+        <ul style="font-size: 1.5rem;text-align: left;">
+            <li> Convert the original image to grayscale using cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+            </li>
+            <li> Store it in a variable named grayscale_image.</li>
+        </ul>
+
+
+        <p style="font-size: 1.5rem;text-align: left;">
+            <b>Step 7: Detect Full Bodies in the Image
+            </b>
+        </p>
+
+        <ul style="font-size: 1.5rem;text-align: left;">
+            <li> Use the detectMultiScale() function on the grayscale image to detect bodies:
+                classifier.detectMultiScale(grayscale_image, scaleFactor=1.04, minNeighbors=5)
+
+            </li>
+            <li> Save the result in a variable named bodies.</li>
+        </ul>
+
+
+        <p style="font-size: 1.5rem;text-align: left;">
+            <b>Step 8: Draw Rectangles Around the Detected Bodies</b>
+        </p>
+
+        <ul style="font-size: 1.5rem;text-align: left;">
+            <li> Use a for loop to draw red rectangles around each detected body: <br>
+                cv2.rectangle(image, (x, y), (x + w, y + h), (0, 0, 255), 2)
+
+            </li>
+            <li> Loop over the variable bodies and extract (x, y, w, h) from each item.
+            </li>
+        </ul>
+
+
+        <p style="font-size: 1.5rem;text-align: left;">
+            <b>Step 9: Display the Final Output
+            </b>
+        </p>
+
+        <ul style="font-size: 1.5rem;text-align: left;">
+            <li> Use cv2.imshow() to show the image with rectangles.</li>
+            <li> Use cv2.waitKey(0) to keep the window open until a key is pressed.</li>
+
+        </ul>
+
+
+
+        <!-- <br><img style="width: 60%;" src="./images/Image_28.png" alt="" class=""> -->
+
+        <div  style="display: flex; justify-content: center;margin-bottom: 2%; gap: 10%;">
+            <a href="https://waytosucceed.github.io/PY_projectshare/" target="_blank" class="button">👉 STEPS FOR
+                SUBMITTING PROJECT</a>
+        <a href="https://github.com/WayToSucceed-Coding/Class-40-Project-Template.git" target="_blank" class="button">👉 CLICK TO GET IMAGES</a>
+        </div>
+        <div style="text-align: left;">
+            <button class="button" id="showImageBtn">Sample Output</button>
+        </div>
+
+        <!-- Hidden Images -->
+
+        <img style="width: 60%;" src="./images/Image_58.png" alt="Sample GIF" id="sampleImage1" class="hidden-image">
+
+    </div>
+
+    <script>
+        // Get the image and button elements
+
+        var image1 = document.getElementById("sampleImage1");
+
+        var button = document.getElementById("showImageBtn");
+
+        // When the user clicks the button, toggle the visibility of both images
+        button.onclick = function () {
+            if (image1.style.display === "none" || image1.style.display === "") {
+
+                image1.style.display = "block"; // Show the second image
+            } else {
+
+                image1.style.display = "none"; // Hide the first image
+                // Hide the second image
+            }
+        }
+    </script>
+
+</body>
+
+</html>
